@@ -9,3 +9,4 @@ export class Profesor {
         public contrasena: string
     ) {}
 }
+
