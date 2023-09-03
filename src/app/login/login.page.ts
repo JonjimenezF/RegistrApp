@@ -27,17 +27,17 @@ export class LoginPage implements OnInit {
   }
 
 
-  ingresar(){
-    for(let i = 0 < this.listUsuario.length; i++){
-       if(this.listUsuario[i]. === this.user.email && this.listUsuario[i]. === this.user.password){
-        let navigationExtras: NavigationExtras = {
-          state: {
-            user: this.listUsuario[i]
-          }
-        }
-       }
-    }
+  // ingresar(){
+  //   for(let i = 0 < this.listUsuario.length; i++){
+  //      if(this.listUsuario[i]. === this.user.email && this.listUsuario[i]. === this.user.password){
+  //       let navigationExtras: NavigationExtras = {
+  //         state: {
+  //           user: this.listUsuario[i]
+  //         }
+  //       }
+  //      }
+  //   }
 
-  }
+  // }
 
 }
