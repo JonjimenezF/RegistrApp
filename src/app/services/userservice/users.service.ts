@@ -55,7 +55,7 @@ export class UsersService {
     );
   }
 
-  //Asignatura
+  //Asignatura Rut
 
   getAsignaturas(rut: string | undefined){
     return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Asignatura?rut_alumno=eq.'+ rut, { headers: this.supebaseheards }).pipe(   
@@ -65,6 +65,17 @@ export class UsersService {
       })
     );
   }
+
+  //Asignatura id_horario
+  getAsignaturasHorario(id_asignatura: number){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Asignatura?id_asignatura=eq.'+ id_asignatura, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar asignatura', error);
+        return error;
+      })
+    );
+  }
+
 
 
   //Registro Asistencia
@@ -88,6 +99,26 @@ export class UsersService {
       })
     );
 
+  }
+
+  //Horario Rut
+  getHorario(id_asignatura: number | undefined){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Horario?id_asignatura=eq.'+ id_asignatura, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar horario', error);
+        return error;
+      })
+    );
+  }
+
+  //Horario id_horario
+  getHorarioAsis(id_horario: number | undefined){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Horario?id_horario=eq.'+ id_horario, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar horario', error);
+        return error;
+      })
+    );
   }
 
 }

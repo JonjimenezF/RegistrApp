@@ -4,16 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div *ngIf="userRegistro">
-    <div *ngFor="let registro of userRegistro">
-      <div class="">
-        <p>Estado de asistencia: {{ registro.estado_asistencia }}</p>
-        <p>Fecha: {{ registro.fecha }}</p>
-        <p>Hora: {{ registro.hora}}</p>
-        <p>Rut alumno: {{ registro.rut_alumno }}</p>
-        <!-- Agrega aquí más campos del registro que desees mostrar -->
-      </div>
+<ion-content>
+  <!-- Itera a través de los registros de asistencia -->
+  <div *ngFor="let registro of userRegistro">
+    <!-- Muestra el RUT del alumno -->
+    <p>RUT del Alumno: {{ registro.rut_alumno }}</p>
+    <!-- Itera a través de las asignaturas para encontrar la correspondiente -->
+    <div *ngFor="let asignatura of userAsignatura">
+      <!-- Comprueba si el ID de la asignatura coincide con el ID en el registro -->
+        <!-- Muestra el nombre y las siglas de la asignatura -->
+        <p>Nombre de Asignatura: {{ asignatura.nombre_asignatura }}</p>
+        <p>Siglas Asignatura: {{asignatura.codigo_asignatura}}</p>
+        <ion-radio-group value="custom-checked">
+          <ion-radio style="margin: 30px;color: black;" value="custom" aria-label="Custom checkbox">Presente</ion-radio>
+          <ion-radio style="margin: 30px;color: black;" value="custom-checked" aria-label="Custom checkbox that is checked">Ausente</ion-radio>
+        </ion-radio-group>
     </div>
   </div>
 </ion-content>
+
+
+<!-- 
+<ion-content>
+  <div *ngFor="let usersec of userSeccion">
+    <div class="divAsignatura">
+      <h4 style="margin-left: 10px;">{{ usersec?.jornada }}</h4>
+      <div *ngFor="let userhora of userHorario">
+        <h4 style="margin-left: 10px;">{{ userhora?.dia_semana}}</h4>
+
+      </div>
+    </div>
+  </div> 
+</ion-content> -->
