@@ -69,6 +69,7 @@ export class LoginAlumnoPage implements OnInit {
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
     (await toast).onDidDismiss();
   }
+
   //   actualizarContrasena(usuario: string, newPassword: string){
   //     for(let i = 0; i < this.ListUsuario.length; i++){
   //       console.log(usuario);  
@@ -88,7 +89,6 @@ export class LoginAlumnoPage implements OnInit {
   //Funciones para redirigir 
   recupContrasena(){
     this.router.navigate(['/recuperarcontrasena']);
-
   }
 
   home() {

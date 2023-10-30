@@ -57,6 +57,10 @@ export const routes: Routes = [
   {
     path: 'asignatura-profe',
     loadComponent: () => import('./asignatura-profe/asignatura-profe.page').then( m => m.AsignaturaProfePage)
+  },  {
+    path: 'iniciarasistencia',
+    loadComponent: () => import('./iniciarasistencia/iniciarasistencia.page').then( m => m.IniciarasistenciaPage)
   },
+
 
 ];

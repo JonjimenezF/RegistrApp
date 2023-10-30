@@ -1,20 +1,12 @@
 <ion-header class="ion-no-border">
-  <!-- <ion-toolbar>
-    <ion-title></ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text=""></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar> -->
   <ion-card-header>
     <div style="text-align: center;">
-      <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text=""></ion-back-button>
-    </ion-buttons>
       <img src="assets/img/LOGO.png" width="120" height="50" alt="">
-      <img src="assets/img/user.png" style="position: absolute; right: 0; margin-right: 20px; margin-top: 10px;" (click)="toggleCard()" >
+      <img src="assets/img/user.png" style="position: absolute; right: 0; margin-right: 20px; margin-top: 10px;"
+        (click)="toggleCard()">
       <ion-card *ngIf="isCardExpanded" style="position: absolute;right: 0;margin-right: 20px; margin-top: 17px;">
         <p (click)="home()">Cerrar sesión</p>
-      </ion-card> 
+      </ion-card>
     </div>
   </ion-card-header>
 </ion-header>
@@ -22,10 +14,18 @@
 <ion-content>
   <ion-card-content>
     <div style="text-align: center; margin-top:30px">
-      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="perfilAlum()">Perfil</ion-button>
-      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="horarioAlum()">Horario</ion-button>
-      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="asistenAlum()">Asistencia</ion-button>
-      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="cursosAlum()">Cursos</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn"
+        (click)="perfilAlum()">Perfil</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn"
+        (click)="horarioAlum()">Horario</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn"
+        (click)="asistenAlum()">Asistencia</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn"
+        (click)="cursosAlum()">Cursos</ion-button>
     </div>
   </ion-card-content>
 </ion-content>
+
+<ion-footer>
+  <img src="assets/img/imagen1.png"  alt="">
+</ion-footer>

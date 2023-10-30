@@ -29,7 +29,7 @@ export class VistaProfePage implements OnInit {
   }
 
   async ngOnInit() {
-    console.log(this.userInfo?.Rut);
+    console.log(this.userInfo);
   }
 
   isCardExpanded = false;
@@ -38,29 +38,41 @@ export class VistaProfePage implements OnInit {
     this.isCardExpanded = !this.isCardExpanded;
   }
 
+
+
+
+
+
+
+
+
+
+
+  //
+
   iniciarAsistencia() {
-    this.router.navigate(['/iniciar-asistencia'], { state: { userInfo: this.userInfo } });
+    this.router.navigate(['/iniciarasistencia'], { state: { userInfo: this.userInfo } });
   }
 
   historialAsistencias() {
-    this.router.navigate(['/historial-asistencias'], { state: { userInfo: this.userInfo } });
+    //this.router.navigate(['/historial-asistencias'], { state: { userInfo: this.userInfo } });
   }
 
   configuracion() {
-    this.router.navigate(['/configuracion'], { state: { userInfo: this.userInfo } });
+    //this.router.navigate(['/configuracion'], { state: { userInfo: this.userInfo } });
   }
 
 
   ayudaSoporte() {
-    this.router.navigate(['/ayuda-soporte'], { state: { userInfo: this.userInfo } });
+    //this.router.navigate(['/ayuda-soporte'], { state: { userInfo: this.userInfo } });
   }
 
   home() {
     this.router.navigate(['/home']);
   }
   
-  perfilProfe() {this.router.navigate(['/perfil-profesor'], {
-    state: {
-      profesor: this.userInfo } });
+  perfilProfe() {
+    this.router.navigate(['/perfil-profesor'], {
+    state: {profesor: this.userInfo } });
  }
 }

@@ -39,6 +39,10 @@ export class AsistenciaAlumnoPage implements OnInit {
     console.log(user_RegistroAsis);
     this.userRegistro = user_RegistroAsis;
     //
+    
+
+
+
     if(this.userRegistro){
       for(const registro of this.userRegistro){
         console.log(registro.id_seccion)
@@ -67,6 +71,14 @@ export class AsistenciaAlumnoPage implements OnInit {
       }
     }  
   }
+
+  async cambiarAsistencia(idAsistencia: number, estado_asistencia:string) {
+    console.log('Función cambiarAsistencia llamada.');
+    console.log(`ID Asistencia: ${idAsistencia}, Estado de Asistencia: ${estado_asistencia}`);
+    const response = await lastValueFrom(this.userService.putRegistroAsistenciaActuali(idAsistencia,estado_asistencia));
+    console.log(response)
+  }
+
 }
 
 

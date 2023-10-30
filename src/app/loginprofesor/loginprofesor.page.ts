@@ -17,12 +17,6 @@ import { ProfesorserviceService } from '../services/userservice/profesorservice.
 })
 export class LoginprofesorPage implements OnInit {
 
-
-  // ListProfesores: Profesor[] = [
-  //   new Profesor('12345678-k', 'Juan', 'Perez', 'ju.perez@duocuc.cl', 'Matemáticas', 'Vespertino', '123'),
-  //   new Profesor('87654321-k', 'Maria', 'Gonzalez', 'ma.gonzalez@duocuc.cl', 'Física','Diurno' , '123'),
-  // ];
-
   user = {
     usuario: "",
     password: ""
@@ -40,7 +34,7 @@ export class LoginprofesorPage implements OnInit {
     console.log(user_profesor);
     if (user_profesor) {
       console.log("Usuario existe...");
-      this.router.navigate(['/vista-profe'], { state: {profesor: user_profesor } })
+      this.router.navigate(['/vista-profe'], { state: {userInfo: user_profesor } })
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");

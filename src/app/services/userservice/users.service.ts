@@ -29,7 +29,7 @@ export class UsersService {
   }
 
 
-
+  //agregarAlumnos
   AgregarAlumno(newUser: alumno): Observable<any> {
     // Define los datos del nuevo usuario que deseas agregar
     console.log(newUser)
@@ -89,6 +89,21 @@ export class UsersService {
     );
 
   }
+  //Registro Asistencia alumno pasa a presente 
+  putRegistroAsistenciaActuali(id_asistencia: number ,estado_asistencia: string){
+    const body = {
+      id_asistencia,          // Agrega la propiedad "id_asistencia"
+      estado_asistencia
+    };
+    return this._httpcliente.put<any>(this.URL_SUPEBASE +'RegistroAsistencia?id_asistencia=eq.'+id_asistencia,body,{ headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar Registro de asistencia ', error);
+        return error;
+      })
+    );
+
+  }
+
 
   //Seccion
   getSeccion(id_seccion: number | undefined ){
