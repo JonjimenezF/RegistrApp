@@ -57,18 +57,10 @@ export const routes: Routes = [
   {
     path: 'asignatura-profe',
     loadComponent: () => import('./asignatura-profe/asignatura-profe.page').then( m => m.AsignaturaProfePage)
-  },  {
+  },
+  {
     path: 'iniciarasistencia',
     loadComponent: () => import('./iniciarasistencia/iniciarasistencia.page').then( m => m.IniciarasistenciaPage)
   },
-  {
-    path: 'generar-qr',
-    loadComponent: () => import('./generar-qr/generar-qr.page').then( m => m.GenerarQrPage)
-  },
-  {
-    path: 'qr',
-    loadComponent: () => import('./qr/qr.page').then( m => m.QrPage)
-  },
-
 
 ];
