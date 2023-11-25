@@ -61,6 +61,10 @@ export const routes: Routes = [
     path: 'iniciarasistencia',
     loadComponent: () => import('./iniciarasistencia/iniciarasistencia.page').then( m => m.IniciarasistenciaPage)
   },
+  {
+    path: 'generar-qr',
+    loadComponent: () => import('./generar-qr/generar-qr.page').then( m => m.GenerarQrPage)
+  },
 
 
 ];
