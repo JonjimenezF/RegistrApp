@@ -10,9 +10,9 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class="fondohome">
   <!-- Itera a través de los registros de asistencia -->
-  <div *ngFor="let registro of userRegistro" style="border: 2px solid rgb(6, 6, 6);background-color: #f9f7f7 ;">
+  <div *ngFor="let registro of userRegistro" style="border: 2px solid rgb(6, 6, 6);background-color: #f9f7f7;margin-top: 10px; " >
     <!-- Muestra el RUT del alumno -->
     <p>RUT del Alumno: {{ registro.rut_alumno }}</p>
     <p>Fechas: {{registro.fecha}}</p>
