@@ -1,32 +1,30 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Perfil del Alumno</ion-title>
+    <ion-title>Perfil Alumno</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fondohome">
   <ion-card>
-    <ion-card-header style="color: black;">
-      <ion-card-title style="color: black;">Nombre: {{userInfo?.Nombre}}</ion-card-title>
-      <ion-label >Carrera: {{userCarrera?.nombre_carrera}}</ion-label>
+    <ion-card-header style="color: black;display: flex; align-items: center;">
+      <img src="assets/img/profile.png" alt="">
+      <h3>{{userInfo?.Nombre}}</h3>
+      <ion-label style="color: black;">{{userInfo?.Rut}}</ion-label>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list style="background-color:rgb(255, 255, 255)">
         <ion-item>
-          <ion-label position="stacked" style="color: black;">Rut: {{userInfo?.Rut}}</ion-label>
+          <ion-label class="centrar-texto">{{userCarrera?.nombre_carrera}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked" style="color: black;">Edad: {{userInfo?.edad}}</ion-label>
+          <ion-label class="centrar-texto" style="color: black;">{{userInfo?.correo}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked" style="color: black;">Correo Electrónico: {{userInfo?.correo}}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label position="stacked" style="color: black;">Teléfono: {{userInfo?.telefono}}</ion-label>
+          <ion-label class="centrar-texto" style="color: black;">{{userInfo?.telefono}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

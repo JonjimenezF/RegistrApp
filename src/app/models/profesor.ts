@@ -1,7 +1,7 @@
 export class Profesor {
     constructor(
         public Rut: string,
-        public Nombre: string,
+        public nombre: string,
         public edad:number,
         public correo: string,
         public password: string,
