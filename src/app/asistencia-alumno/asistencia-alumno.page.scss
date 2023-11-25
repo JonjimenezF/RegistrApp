@@ -1,12 +1,12 @@
 * {
-    --background: #ffffff; /* Cambia el color de fondo aquí */
+    --background: hsl(0, 12%, 92%); /* Cambia el color de fondo aquí */
   }
 
 ion-radio {
     --border-radius: 4px;
     --inner-border-radius: 4px;
   
-    --color: #ddd;
+    --color: #0c0c0c;
     --color-checked: #6815ec;
   }
   
@@ -22,8 +22,8 @@ ion-radio {
   }
 
 p{
-    color: rgb(255, 255, 255);
-    margin-left: 20px;
+    color: rgb(12, 12, 12);
+    margin-left: 10px;
 }
 
 .center-radio {
@@ -32,3 +32,5 @@ p{
     align-items: center;
     flex-direction: column;
   }
+
+  

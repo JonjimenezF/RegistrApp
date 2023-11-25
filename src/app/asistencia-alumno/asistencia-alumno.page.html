@@ -1,8 +1,10 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <p style="color: black;display: flex;
+    <p style="color: rgb(8, 8, 8);display: flex;
     align-items: center;
     justify-content: center;">Asistencia Alumno</p>
+   <img src="assets/img/notas2.png" width="60" height="40" style="position: absolute; right: 0; margin-right: 60px; margin-top: 10px;">
+     
     <ion-buttons slot="start">
       <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
     </ion-buttons>
@@ -10,7 +12,7 @@
 </ion-header>
 <ion-content>
   <!-- Itera a través de los registros de asistencia -->
-  <div *ngFor="let registro of userRegistro" style="border: 2px solid rgb(255, 255, 255);background-color: #1f1d6e ;">
+  <div *ngFor="let registro of userRegistro" style="border: 2px solid rgb(6, 6, 6);background-color: #f9f7f7 ;">
     <!-- Muestra el RUT del alumno -->
     <p>RUT del Alumno: {{ registro.rut_alumno }}</p>
     <p>Fechas: {{registro.fecha}}</p>
@@ -22,8 +24,8 @@
         <p>Siglas Asignatura: {{asignatura.codigo_asignatura}}</p>
     </div>
     <ion-radio-group [value]="registro.estado_asistencia">
-      <ion-radio style="margin: 30px;color: rgb(255, 255, 255);" value="Presente" aria-label="Custom checkbox" (click)="cambiarAsistencia(registro.id_asistencia, 'Presente')">Presente</ion-radio>
-      <ion-radio style="margin: 30px;color: rgb(255, 255, 255);" value="Ausente" aria-label="Custom checkbox that is checked">Ausente</ion-radio>
+      <ion-radio style="margin: 30px;color: rgb(3, 3, 3);" value="Presente" aria-label="Custom checkbox" (click)="cambiarAsistencia(registro.id_asistencia, 'Presente')">Presente</ion-radio>
+      <ion-radio style="margin: 30px;color: rgb(17, 16, 16);" value="Ausente" aria-label="Custom checkbox that is checked">Ausente</ion-radio>
     </ion-radio-group>
   </div>
 </ion-content>
@@ -31,10 +33,10 @@
 
 <!-- 
 <ion-content>
-  <div *ngFor="let usersec of userSeccion">
+  <div ngFor="let usersec of userSeccion">
     <div class="divAsignatura">
       <h4 style="margin-left: 10px;">{{ usersec?.jornada }}</h4>
-      <div *ngFor="let userhora of userHorario">
+      <divngFor="let userhora of userHorario">
         <h4 style="margin-left: 10px;">{{ userhora?.dia_semana}}</h4>
 
       </div>

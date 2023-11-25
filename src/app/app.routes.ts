@@ -61,8 +61,4 @@ export const routes: Routes = [
   {
     path: 'iniciarasistencia',
     loadComponent: () => import('./iniciarasistencia/iniciarasistencia.page').then( m => m.IniciarasistenciaPage)
-  },
-
-
-
-];
+  }

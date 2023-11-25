@@ -1,12 +1,20 @@
 <ion-header class="ion-no-border">
   <ion-card-header>
     <div style="text-align: center;">
-      <img src="assets/img/LOGO.png" width="120" height="50" alt="">
+      <img src="assets/img/LOGO.png" width="120" height="50" alt=""> 
       <img src="assets/img/user.png" style="position: absolute; right: 0; margin-right: 20px; margin-top: 10px;"
-        (click)="toggleCard()">
-      <ion-card *ngIf="isCardExpanded" style="position: absolute;right: 0;margin-right: 20px; margin-top: 17px;">
+      (click)="toggleCard()">
+      <ion-card *ngIf="isCardExpanded" style="position: absolute;right: 0;margin-right: 20px; margin-top: 10px;">
         <p (click)="home()">Cerrar sesión</p>
       </ion-card>
+      
+      <img (click)="home()" src ="assets/img/mensaje.png" width="60" height="40" style="position: absolute; right: 0; margin-right: 60px; margin-top: 10px; ">
+      
+      <img (click)="home() " src="assets/img/soporte.png" width="60" height="40" style="position: absolute; right: 0; margin-right: 120px; margin-top: 10px;">
+      <img (click)="home() " src="assets/img/notas2.png" width="60" height="40" style="position: absolute; right: 0; margin-right: 180px; margin-top: 10px;">
+    
+        
+      
     </div>
   </ion-card-header>
 </ion-header>
