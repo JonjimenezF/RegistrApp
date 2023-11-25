@@ -10,12 +10,16 @@ import { provideHttpClient } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
+  
 }
 
+
 bootstrapApplication(AppComponent, {
+  
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     importProvidersFrom(IonicModule.forRoot({})),
     provideRouter(routes), provideHttpClient()
   ],
+  
 });
