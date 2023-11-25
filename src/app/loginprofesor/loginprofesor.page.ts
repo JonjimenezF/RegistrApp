@@ -29,6 +29,8 @@ export class LoginprofesorPage implements OnInit {
   ngOnInit() {
   }
 
+  
+
   async Login(userLoginInfo: userLogin) {
     const user_profesor = await lastValueFrom(this.profesorservice.getLoginProfe(userLoginInfo));
     console.log(user_profesor);
