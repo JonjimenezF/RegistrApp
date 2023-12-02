@@ -125,4 +125,8 @@ export class QRPage implements OnInit {
   }
 
 
+  vistaprofe(){
+    this.router.navigate(['/vista-profe']);
+  }
+
 }

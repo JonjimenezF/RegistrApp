@@ -20,3 +20,10 @@
         color:black;
     }
 }
+
+ion-content.fondohome {
+    --background: url('../../assets/img/fondo.png')center center/cover no-repeat; /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta real de tu imagen */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }

@@ -33,13 +33,15 @@ export class VistaAlumnoPage implements OnInit {
     this.isCardExpanded = !this.isCardExpanded;
   }
 
+  //
+
 
   perfilAlum(){  
     this.router.navigate(['/perfil-alumno'], { state: { userInfo:this.userInfo}})
   }
 
   asistenAlum(){
-    this.router.navigate(['/asistencia-alumno'], { state: { userInfo:this.userInfo}})
+    //this.router.navigate(['/asistencia-alumno'], { state: { userInfo:this.userInfo}})
   }
 
   horarioAlum(){
@@ -50,6 +52,9 @@ export class VistaAlumnoPage implements OnInit {
     this.router.navigate(['/cursos'], { state: { userInfo:this.userInfo}})
   }
 
+  camara(){
+    this.router.navigate(['/camara'], { state: { userInfo:this.userInfo}})
+  }
 
   //Redirigir
   home(){

@@ -65,6 +65,10 @@ export const routes: Routes = [
     path: 'qr',
     loadComponent: () => import('./qr/qr.page').then( m => m.QRPage)
   },
+  {
+    path: 'camara',
+    loadComponent: () => import('./camara/camara.page').then( m => m.CamaraPage)
+  },
 
 
 ];

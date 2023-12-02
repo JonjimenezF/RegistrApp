@@ -1,8 +1,8 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <p style="color: black;display: flex;
-    align-items: center;
-    justify-content: center;">Horario</p>
+    <div style="align-items: center;">
+      <p style="color: black;margin-left: 35%;">Horario</p>
+    </div>
     <ion-buttons slot="start">
       <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
     </ion-buttons>
@@ -10,18 +10,17 @@
 </ion-header>
 
 <ion-content class="fondohome">
-  <div *ngFor="let asignatura of userAsignatura" style="border: 2px solid rgb(255, 255, 255);background-color: #1f1d6e ;">
+  <div *ngFor="let asignatura of userAsignatura" style="border: 2px solid rgb(165, 165, 165);background-color: #ffffff ;margin: 20px;">
     <!-- Comprueba si el ID de la asignatura coincide con el ID en el registro -->
     <!-- Muestra el nombre y las siglas de la asignatura -->
-    <p>Nombre de Asignatura: {{ asignatura.nombre_asignatura }}</p>
-    <p>Siglas Asignatura: {{asignatura.codigo_asignatura}}</p>
     <div *ngFor="let horario of userHorario ">
       <div>
-        <p>Dia: {{ horario.dia_semana }}</p>
-        <p>Hora de inicio: {{ horario.hora_inicio }}</p>
-        <p>Hora de fin {{ horario.hora_fin }}</p>
+        <h3 style="margin-left:25px">{{ horario.dia_semana }}</h3>
+        <p style="font-weight: bold;">{{ horario.hora_inicio }} a {{ horario.hora_fin }} </p>
         <!-- Agrega aquí más campos del registro que desees mostrar -->
       </div>
     </div>
+    <p>{{ asignatura.nombre_asignatura }}</p>
+    <p>{{asignatura.codigo_asignatura}}</p>
   </div>
 </ion-content>
