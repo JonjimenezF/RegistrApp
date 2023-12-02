@@ -10,16 +10,16 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="fondohome">
-  <!-- Itera a través de los registros de asistencia -->
+<!-- <ion-content class="fondohome">
+   Itera a través de los registros de asistencia 
   <div *ngFor="let registro of userRegistro" style="border: 2px solid rgb(6, 6, 6);background-color: #f9f7f7;margin-top: 10px; " >
-    <!-- Muestra el RUT del alumno -->
+     Muestra el RUT del alumno 
     <p>RUT del Alumno: {{ registro.rut_alumno }}</p>
     <p>Fechas: {{registro.fecha}}</p>
-    <!-- Itera a través de las asignaturas para encontrar la correspondiente -->
+    Itera a través de las asignaturas para encontrar la correspondiente 
     <div *ngFor="let asignatura of userAsignatura">
-      <!-- Comprueba si el ID de la asignatura coincide con el ID en el registro -->
-        <!-- Muestra el nombre y las siglas de la asignatura -->
+       Comprueba si el ID de la asignatura coincide con el ID en el registro 
+        Muestra el nombre y las siglas de la asignatura 
         <p>Nombre de Asignatura: {{ asignatura.nombre_asignatura }}</p>
         <p>Siglas Asignatura: {{asignatura.codigo_asignatura}}</p>
     </div>
@@ -28,5 +28,5 @@
       <ion-radio style="margin: 30px;color: rgb(17, 16, 16);" value="Ausente" aria-label="Custom checkbox that is checked">Ausente</ion-radio>
     </ion-radio-group>
   </div>
-</ion-content>
+</ion-content> -->
 

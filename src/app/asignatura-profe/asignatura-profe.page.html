@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asignaturaProfe</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card-content style="border: 1px;" >
+        <ion-list style="background-color:rgb(255, 255, 255);border: 1px;">
+          <ion-item >
+            <ion-label class="centrar-texto" style="color: rgb(0, 0, 0);">{{userClase?.id_clase}}</ion-label>
+            <ion-label class="centrar-texto" style="color: black;">{{userClase?.id_seccion}}</ion-label>
+            <ion-label class="centrar-texto" style="color: black;">{{userClase?.rut_profesor}}</ion-label>
+            <img  src="assets/img/plus.png" alt="" (click)="home()">
+          </ion-item>
+        </ion-list>
+    </ion-card-content>
+      
 </ion-content>

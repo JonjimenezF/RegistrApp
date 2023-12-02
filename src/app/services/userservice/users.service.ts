@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
 import { userLogin } from 'src/app/models/userLogin';
 import { alumno } from 'src/app/models/alumno';
+import { registroAsistencia } from 'src/app/models/registroAsistencia';
 
 
 @Injectable({
@@ -135,5 +136,61 @@ export class UsersService {
       })
     );
   }
+
+  //Profesor
+  getClase(rut_profesor:string | undefined){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Clase?rut_profesor=eq.'+ rut_profesor, { headers: this.supebaseheards }).pipe(
+      map((user) => {
+        console.log("Map", user[0])
+        return user[0]
+      }), catchError((err) => {
+        console.log(err)
+        return err;
+      })
+    );
+  }
+
+  postAsistencia(hora: string | undefined,fecha:string | undefined,estado_asistencia:string,id_seccion:number | undefined,rut_alumno:string | undefined):Observable<any> {
+    const body = {
+      fecha,
+      hora,
+      estado_asistencia,
+      id_seccion,
+      rut_alumno   
+    };
+    console.log(body)
+    return this._httpcliente.post<any>(this.URL_SUPEBASE + 'RegistroAsistencia', body, { headers: this.supebaseheards }).pipe(
+      catchError((error) => {
+        console.error('Error al crear un nuevo usuario', error);
+        return error;
+      })
+    );
+  }
+
+  // AgregarAlumno(newUser: alumno): Observable<any> {
+  //   // Define los datos del nuevo usuario que deseas agregar
+  //   console.log(newUser)
+  //   return this._httpcliente.post<any>(this.URL_SUPEBASE + 'Alumno',newUser, { headers: this.supebaseheards }).pipe(
+  //     catchError((error) => {
+  //       console.error('Error al crear un nuevo usuario', error);
+  //       return error;
+  //     })
+  //   );
+  // }
+
+
+
+  getAsignaturaCod(codigo:string| undefined){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Asignatura?codigo_asignatura=eq.'+ codigo, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar asignatura', error);
+        return error;
+      })
+    );
+
+  }
+
+  
+
 
 }

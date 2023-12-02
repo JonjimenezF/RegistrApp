@@ -43,42 +43,43 @@ export class AsistenciaAlumnoPage implements OnInit {
 
 
 
-    if(this.userRegistro){
-      for(const registro of this.userRegistro){
-        console.log(registro.id_seccion)
-        const user_Seccion = await lastValueFrom(this.userService.getSeccion(registro.id_seccion));
-        this.userSeccion = user_Seccion;
-        if(this.userSeccion){
-          for(const seccion of this.userSeccion){
-            console.log(seccion.id_horario);
-            const user_Horario = await lastValueFrom(this.userService.getHorarioAsis(seccion.id_horario));
-            this.userHorario = user_Horario;
-          }
-          if(this.userHorario){
-            for(const horario of this.userHorario){
-              console.log(horario.id_sala);
-              const user_Asignatura = await lastValueFrom(this.userService.getAsignaturasHorario(horario.id_asignatura));
-              this.userAsignatura = user_Asignatura; 
-              console.log(this.userAsignatura);
-            }
-            if(this.userAsignatura){
-              for(const asignatura of this.userAsignatura){
-                console.log(asignatura.nombre_asignatura);
-              }
-            }
-          }
-        }
-      }
-    }  
-  }
+  //   if(this.userRegistro){
+  //     for(const registro of this.userRegistro){
+  //       console.log(registro.id_seccion)
+  //       const user_Seccion = await lastValueFrom(this.userService.getSeccion(registro.id_seccion));
+  //       this.userSeccion = user_Seccion;
+  //       if(this.userSeccion){
+  //         for(const seccion of this.userSeccion){
+  //           console.log(seccion.id_horario);
+  //           const user_Horario = await lastValueFrom(this.userService.getHorarioAsis(seccion.id_horario));
+  //           this.userHorario = user_Horario;
+  //         }
+  //         if(this.userHorario){
+  //           for(const horario of this.userHorario){
+  //             console.log(horario.id_sala);
+  //             const user_Asignatura = await lastValueFrom(this.userService.getAsignaturasHorario(horario.id_asignatura));
+  //             this.userAsignatura = user_Asignatura; 
+  //             console.log(this.userAsignatura);
+  //           }
+  //           if(this.userAsignatura){
+  //             for(const asignatura of this.userAsignatura){
+  //               console.log(asignatura.nombre_asignatura);
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }  
+  // }
 
-  async cambiarAsistencia(idAsistencia: number, estado_asistencia:string) {
-    console.log('Función cambiarAsistencia llamada.');
-    console.log(`ID Asistencia: ${idAsistencia}, Estado de Asistencia: ${estado_asistencia}`);
-    const response = await lastValueFrom(this.userService.putRegistroAsistenciaActuali(idAsistencia,estado_asistencia));
-    console.log(response)
-  }
+  // async cambiarAsistencia(idAsistencia: number, estado_asistencia:string) {
+  //   console.log('Función cambiarAsistencia llamada.');
+  //   console.log(`ID Asistencia: ${idAsistencia}, Estado de Asistencia: ${estado_asistencia}`);
+  //   const response = await lastValueFrom(this.userService.putRegistroAsistenciaActuali(idAsistencia,estado_asistencia));
+  //   console.log(response)
+ }
 
 }
+
 
 

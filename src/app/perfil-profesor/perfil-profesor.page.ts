@@ -14,17 +14,15 @@ import { Profesor } from '../models/profesor';
 })
 export class PerfilProfesorPage implements OnInit {
     
-    profesor?: Profesor;
+  userInfo?: Profesor;
     constructor(private router: Router, private activateRoute: ActivatedRoute) {
       const state = this.router.getCurrentNavigation()?.extras.state;
-      if (state && state['profesor']) {
-        this.profesor = state['profesor'];
+      if (state && state['userInfo']) {
+        this.userInfo = state['userInfo'];
       }
-    }
-  
-  
+    }  
   
     ngOnInit() {
-      console.log(this.profesor)
+      console.log(this.userInfo)
     }
 }

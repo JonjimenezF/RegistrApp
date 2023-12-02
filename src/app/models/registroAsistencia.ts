@@ -1,11 +1,9 @@
 export class registroAsistencia {
     constructor(
-        public id_asistencia: number,
-        public fecha: string,
-        public hora: string,
-        public estado_asistencia: string,
-        public id_seccion: number,
-        public rut_alumno: string,
-        public rut_profesor: string,
+        public fecha: string | undefined,
+        public hora: string | undefined,
+        public estado_asistencia: string | undefined,
+        public id_clase: number | undefined,
+        public rut_alumno: string | undefined,
     ) {}
 }
