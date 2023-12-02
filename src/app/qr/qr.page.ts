@@ -54,7 +54,7 @@ export class QRPage implements OnInit {
       }
       if (this.userHorario) {
         for (const horario of this.userHorario) {
-          const user_Asignatura = await lastValueFrom(this.userService.getAsignaturasHorario(horario.id_horario))
+          const user_Asignatura = await lastValueFrom(this.userService.getAsignaturasHorario(horario.id_asignatura))
           this.userAsignatura = user_Asignatura
           console.log(this.userAsignatura)
         }
