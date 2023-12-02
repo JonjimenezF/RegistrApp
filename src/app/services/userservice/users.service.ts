@@ -150,12 +150,12 @@ export class UsersService {
     );
   }
 
-  postAsistencia(hora: string | undefined,fecha:string | undefined,estado_asistencia:string,id_seccion:number | undefined,rut_alumno:string | undefined):Observable<any> {
+  postAsistencia(hora: string | undefined,fecha:string | undefined,estado_asistencia:string,id_clase: number | undefined,rut_alumno:string | undefined):Observable<any> {
     const body = {
       fecha,
       hora,
       estado_asistencia,
-      id_seccion,
+      id_clase,
       rut_alumno   
     };
     console.log(body)
