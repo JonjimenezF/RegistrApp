@@ -1,14 +1,13 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <div style="align-items: center;">
-      <p style="color: black;margin-left: 35%;">Horario</p>
+    <div style="text-align: center;">
+      <p style="color: black;">Horario</p>
     </div>
     <ion-buttons slot="start">
       <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="fondohome">
   <div *ngFor="let asignatura of userAsignatura" style="border: 2px solid rgb(165, 165, 165);background-color: #ffffff ;margin: 20px;">
     <!-- Comprueba si el ID de la asignatura coincide con el ID en el registro -->

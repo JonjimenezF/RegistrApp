@@ -23,7 +23,7 @@ export class HorarioAlumnoPage implements OnInit {
 
   userInfo?: alumno;
   userAsignatura?: asignatura[] = [];
-  userHorario?: horario [] = [] ;
+  userHorario?: horario[] | undefined = [];
 
   constructor(private router: Router, private activateRoute: ActivatedRoute, private userService: UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;
@@ -49,24 +49,28 @@ export class HorarioAlumnoPage implements OnInit {
         const user_horario = await lastValueFrom(this.userService.getHorario(asignatura.id_asignatura));
         console.log(user_horario);
         this.userHorario = user_horario;
-        if(this.userHorario){
-          for(const horario of this.userHorario){
+        if (this.userHorario) {
+          for (const horario of this.userHorario) {
             console.log(horario.dia_semana);
+            if (user_horario !== undefined) {
+              this.userHorario = this.userHorario.concat(user_horario);
+            } else {
+              console.error('user_horario es undefined');
+            }
           }
         }
-        
-       
       }
-
-      
-
-    }else{
+    } else {
       console.log('error')
     }
+    
 
   }
 
-  
+  getHorariosByDiaSemana(diaSemana: string) {
+    return this.userHorario?.filter(horario => horario.dia_semana === diaSemana) ?? [];
+  }
+
 
 }
 

@@ -2,22 +2,22 @@
     --background: #ffffff; /* Cambia el color de fondo aquí */
   }
 
-div{
+  div{
     p{
         color: rgb(0, 0, 0);
         margin-left: 45px;
     }
-}
-ion-content.fondohome {
+  }
+  ion-content.fondohome {
     --background: url('../../assets/img/fondo.png')center center/cover no-repeat; /* Reemplaza 'ruta/de/la/imagen.jpg' con la ruta real de tu imagen */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
 
-p{
+  p{
   color: black;
-}
-h3{
+  }
+  h3{
   color: black;
-}
+  }

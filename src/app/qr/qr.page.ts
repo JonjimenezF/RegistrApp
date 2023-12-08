@@ -112,7 +112,7 @@ export class QRPage implements OnInit {
 
   convertir() {
     // Agregar la fecha y la hora actual al objeto JSON
-    const jsonConFechaHora = {
+    const json = {
       // fechaActual: this.fechaActual,
       // horaActual: this.horaActual,
       id_seccion: this.userclase?.id_seccion,
@@ -120,7 +120,7 @@ export class QRPage implements OnInit {
     };
 
     // Convertir a cadena JSON
-    this.urlCodigoQR = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(JSON.stringify(jsonConFechaHora))}`;
+    this.urlCodigoQR = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(JSON.stringify(json))}`;
     console.log(this.urlCodigoQR);
   }
 
