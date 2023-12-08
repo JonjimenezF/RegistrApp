@@ -45,30 +45,32 @@ export class HorarioAlumnoPage implements OnInit {
 
 
     if (this.userAsignatura) {
+      this.userHorario = []; // Inicializar el array antes de agregar horarios
       for (const asignatura of this.userAsignatura) {
         const user_horario = await lastValueFrom(this.userService.getHorario(asignatura.id_asignatura));
         console.log(user_horario);
-        this.userHorario = user_horario;
+        this.userHorario = this.userHorario.concat(user_horario); // Agregar los horarios al array existente
         if (this.userHorario) {
+          this.userHorario.sort((a, b) => {
+            // Ordenar por el día de la semana (puedes personalizar el orden según tus necesidades)
+            const diasSemana = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            return diasSemana.indexOf(a.dia_semana) - diasSemana.indexOf(b.dia_semana);
+          });
+  
           for (const horario of this.userHorario) {
             console.log(horario.dia_semana);
-            if (user_horario !== undefined) {
-              this.userHorario = this.userHorario.concat(user_horario);
-            } else {
-              console.error('user_horario es undefined');
-            }
           }
         }
       }
     } else {
-      console.log('error')
+      console.log('error');
     }
     
 
   }
 
-  getHorariosByDiaSemana(diaSemana: string) {
-    return this.userHorario?.filter(horario => horario.dia_semana === diaSemana) ?? [];
+  getHorariosByAsignatura(idAsignatura: number) {
+    return this.userHorario?.filter(horario => horario.id_asignatura === idAsignatura) ?? [];
   }
 
 
